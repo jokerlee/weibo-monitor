@@ -54,31 +54,31 @@ if ('webkitIndexedDB' in window) {
 
 var DB = {};
 DB.db = null;
-
+var dbVer = 2;
 DB.open = function() {
-    var request = indexedDB.open("weibo");
+    var request = indexedDB.open("weibo", dbVer);
     request.onerror = DB.onerror;
     request.onsuccess = function(e) {
-        var version = "1.1";
-        DB.db = e.target.result;
-        var db = DB.db;
-        if (version != db.version) {
-            var setVersionReq = db.setVersion(version);
-            setVersionReq.onerror = DB.onerror;
-            setVersionReq.onsuccess = function(e) {
-                if(db.objectStoreNames.contains("tweets")) {
-                    db.deleteObjectStore("tweets");
-                }
-
-                var store = db.createObjectStore("tweets", {"keyPath": "id"});
-                e.target.transaction.oncomplete = function() {
-                    init();
-                };
+        var db = DB.db = e.target.result;
+        if ('setVersion' in db && db.version < dbVer) {
+            var setVerReq = db.setVersion(version);
+            setVerReq.onsuccess = function(e) {
+                console.log('upgrading');
+                createStore(db);
+                init();
             };
         } else {
             init();
         }
     };
+    request.onupgradeneeded = function(e) {
+        console.log('upgrading');
+        createStore(e.target.result);
+    }
+    
+    function createStore(db) {
+        db.createObjectStore("tweets", {"keyPath": "id"});
+    }
 }
 
 // make sure all tweets are have same key
