@@ -1,0 +1,26 @@
+{
+    "update_url": "http://boundary.cc:3000/update/weibo.xml",
+    "description": "监控包含特定关键词的微博",
+    "name": "微博监视器",
+    "version": "0.1.6",
+    "background": {
+        "page": "bg.html"
+    },
+    "options_page": "options.html",
+    "permissions": ["tabs", "notifications", "storage", "unlimitedStorage", "http://*/*" ],
+    "icons": {
+        "128": "images/logo.png"
+    },
+    "browser_action": {
+        "default_icon": "images/icon.png",
+        "default_title": "惠惠购物助手\u2122",
+        "default_popup": "popup.html"
+    },
+    "content_scripts": [{
+        "js": ["assets/jquery.js", "assets/underscore.js", "parser.js"],
+        "matches": ["http://s.weibo.com/weibo/*" ],
+        "run_at": "document_end"
+    }],
+    "manifest_version": 2,
+    "content_security_policy": "script-src 'self'; object-src 'self'"
+}

@@ -1,0 +1,56 @@
+body {
+    font-size: 12px;
+    width: 500px;
+    margin: 0;
+    padding: 0;
+    font-family: "'Segoe UI', Arial, 'Microsoft Yahei', Simsun, sans-serif";
+}
+
+#func {
+    position: fixed;
+    padding: 5px;
+    top: 0;
+    right: 0;
+    width: 490px;
+    border-bottom: 1px solid #EEE;
+    background-image: -webkit-linear-gradient(white, white 40%, rgba(255, 255, 255, 0.92));
+    -webkit-transform: translateX(0px);
+}
+
+.header {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+#tweet-list {
+    margin-top: 35px;
+    padding: 5px;
+}
+
+.tweet {
+    color: #333;
+    border: dotted 1px;
+    padding: 5px;
+    margin: 5px;
+    background: #DFFFBF;
+    word-break: break-all;
+}
+
+.unread {
+    background: #FFFACD;
+}
+
+.user {
+}
+
+.time {
+    float: right;
+}
+
+.status {
+    cursor: pointer;
+    float: right;
+    color: blue;
+    margin-left: 20px;
+    text-decoration: underline;
+}

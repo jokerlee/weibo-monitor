@@ -1,0 +1,74 @@
+/* from chrome widget.css */
+
+body {
+    font-size: 12px;
+    font-family: "'Segoe UI', Arial, 'Microsoft Yahei', Simsun, sans-serif";
+}
+
+:-webkit-any(button,
+             input[type='button'],
+             input[type='submit']):not(.custom-appearance):not(.link-button),
+select,
+input[type='checkbox'],
+input[type='radio'] {
+  -webkit-appearance: none;
+  -webkit-user-select: none;
+  background-image: -webkit-linear-gradient(#ededed, #ededed 38%, #dedede);
+  border: 1px solid rgba(0, 0, 0, 0.25);
+  border-radius: 2px;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.08),
+      inset 0 1px 2px rgba(255, 255, 255, 0.75);
+  color: #444;
+  font: inherit;
+  text-shadow: 0 1px 0 rgb(240, 240, 240);
+}
+
+:enabled:hover:-webkit-any(
+    select,
+    input[type='checkbox'],
+    input[type='radio'],
+    :-webkit-any(
+        button,
+        input[type='button'],
+        input[type='submit']):not(.custom-appearance):not(.link-button)) {
+  background-image: -webkit-linear-gradient(#f0f0f0, #f0f0f0 38%, #e0e0e0);
+  border-color: rgba(0, 0, 0, 0.3);
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.12),
+      inset 0 1px 2px rgba(255, 255, 255, 0.95);
+  color: black;
+}
+
+:enabled:active:-webkit-any(
+    select,
+    input[type='checkbox'],
+    input[type='radio'],
+    :-webkit-any(
+        button,
+        input[type='button'],
+        input[type='submit']):not(.custom-appearance):not(.link-button)) {
+  background-image: -webkit-linear-gradient(#e7e7e7, #e7e7e7 38%, #d7d7d7);
+  box-shadow: none;
+  text-shadow: none;
+}
+
+.header {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.time {
+    float: right;
+}
+
+.tweet {
+    color: #333;
+    border: dotted 1px;
+    padding: 5px;
+    background: #DFFFBF;
+    word-break: break-all;
+}
+
+.unread {
+    background: #FFFACD;
+}
+
