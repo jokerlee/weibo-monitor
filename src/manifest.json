@@ -1,6 +1,5 @@
 {
-    "update_url": "http://boundary.cc:3000/update/weibo.xml",
-    "description": "监控包含特定关键词的微博",
+    "description": "监控包含特定关键词的微博，一旦有新微博，通过弹窗通知",
     "name": "微博监视器",
     "version": "0.1.6",
     "background": {
