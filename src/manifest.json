@@ -1,7 +1,7 @@
 {
     "description": "监控包含特定关键词的微博，一旦有新微博，通过弹窗通知",
     "name": "微博监视器",
-    "version": "0.1.6",
+    "version": "0.1.6.1",
     "background": {
         "page": "bg.html"
     },
